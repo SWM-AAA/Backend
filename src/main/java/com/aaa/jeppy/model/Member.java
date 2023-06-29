@@ -1,6 +1,8 @@
 package com.aaa.jeppy.model;
 // import jakarta.persistence.*;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
@@ -19,4 +21,12 @@ public class Member {
 
     @Column(nullable = false)
     private String membername;
+
+    @Column(name = "provider", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private SocialProvider provider;
+
+    public enum SocialProvider {
+        KAKAO, GOOGLE
+    }
 }
