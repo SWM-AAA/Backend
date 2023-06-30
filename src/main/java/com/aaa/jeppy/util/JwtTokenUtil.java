@@ -30,6 +30,7 @@ public class JwtTokenUtil implements Serializable {
 
     // 토큰에서 이메일을 추출하는 함수
     public String getEmailFromToken(String token) {
+        // (String) --> 앞의 함수의 반환값을 String으로 캐스팅함.
         return (String) getClaimFromToken(token, claims -> claims.get("email", String.class));
     }
 
