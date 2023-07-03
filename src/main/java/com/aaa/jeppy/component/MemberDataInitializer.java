@@ -1,8 +1,8 @@
 package com.aaa.jeppy.component;
 
-import com.aaa.jeppy.repository.MemberRepository;
-import com.aaa.jeppy.model.Member;
-import com.aaa.jeppy.model.Member.SocialProvider;
+import com.aaa.jeppy.member.model.Member;
+import com.aaa.jeppy.member.model.Member.SocialProvider;
+import com.aaa.jeppy.member.repository.MemberRepository;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
