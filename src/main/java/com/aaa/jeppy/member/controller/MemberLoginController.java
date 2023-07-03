@@ -1,7 +1,7 @@
-package com.aaa.jeppy.controller;
+package com.aaa.jeppy.member.controller;
 
-import com.aaa.jeppy.dto.MemberCheckRegistedDTO;
-import com.aaa.jeppy.service.CheckMemberRegistedService;
+import com.aaa.jeppy.member.dto.MemberCheckRegistedDTO;
+import com.aaa.jeppy.member.service.CheckMemberRegistedService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.aaa.jeppy.dto;
+package com.aaa.jeppy.member.dto;
 
 import lombok.Data;
 

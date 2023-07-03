@@ -1,7 +1,7 @@
-package com.aaa.jeppy.service;
+package com.aaa.jeppy.member.service;
 
-import com.aaa.jeppy.model.Member;
-import com.aaa.jeppy.repository.MemberRepository;
+import com.aaa.jeppy.member.model.Member;
+import com.aaa.jeppy.member.repository.MemberRepository;
 
 import org.springframework.stereotype.Service;
 
