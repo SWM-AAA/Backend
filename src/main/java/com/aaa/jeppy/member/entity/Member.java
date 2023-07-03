@@ -1,4 +1,4 @@
-package com.aaa.jeppy.member.model;
+package com.aaa.jeppy.member.entity;
 // import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

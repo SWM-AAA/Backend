@@ -1,7 +1,7 @@
 package com.aaa.jeppy.component;
 
-import com.aaa.jeppy.member.model.Member;
-import com.aaa.jeppy.member.model.Member.SocialProvider;
+import com.aaa.jeppy.member.entity.Member;
+import com.aaa.jeppy.member.entity.Member.SocialProvider;
 import com.aaa.jeppy.member.repository.MemberRepository;
 
 import jakarta.annotation.PostConstruct;

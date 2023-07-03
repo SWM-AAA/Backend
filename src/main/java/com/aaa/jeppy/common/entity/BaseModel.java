@@ -1,4 +1,4 @@
-package com.aaa.jeppy.model;
+package com.aaa.jeppy.common.entity;
 // jdk8 이후부터 사용된 패키지로 날짜, 시간, 날짜 시간을 다루는 클래스 사용중인건 날짜 시간을 다룸
 // https://java119.tistory.com/52
 import java.time.LocalDateTime;
