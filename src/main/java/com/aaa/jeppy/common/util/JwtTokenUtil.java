@@ -82,6 +82,6 @@ public class JwtTokenUtil implements Serializable {
     // 토큰의 유효성을 검사하는 함수
     public Boolean validateToken(String token, Member member) {
         final String memberName = getMemberNameFromToken(token);
-        return (memberName.equals(member.getMembername()) && !isTokenExpired(token));
+        return (memberName.equals(member.getEmail()) && !isTokenExpired(token));
     }
 }

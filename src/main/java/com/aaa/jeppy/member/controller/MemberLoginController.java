@@ -1,7 +1,9 @@
 package com.aaa.jeppy.member.controller;
 
-import com.aaa.jeppy.member.dto.MemberCheckRegistedDTO;
-import com.aaa.jeppy.member.service.CheckMemberRegistedService;
+import com.aaa.jeppy.member.dto.request.MemberCheckRegistedRequestDTO;
+import com.aaa.jeppy.member.service.MemberAuthServiceImpl;
+
+import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
@@ -10,20 +12,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 @RequestMapping("/auth")
 public class MemberLoginController {
 
-    private final CheckMemberRegistedService checkMemberRegistedService;
+    private final MemberAuthServiceImpl MemberAuthServiceImpl;
 
-    public MemberLoginController(CheckMemberRegistedService checkMemberRegistedService) {
-        this.checkMemberRegistedService = checkMemberRegistedService;
+    public MemberLoginController(MemberAuthServiceImpl MemberAuthServiceImpl) {
+        this.MemberAuthServiceImpl = MemberAuthServiceImpl;
     }
 
     @PostMapping("/check-login")
-    public ResponseEntity<Void> memberIsRegistered(@RequestBody MemberCheckRegistedDTO memberCheckRegistedDTO) {
+    public ResponseEntity<Void> memberIsRegistered(@RequestBody MemberCheckRegistedRequestDTO MemberCheckRegistedRequestDTO) {
 
-        boolean isRegistered = checkMemberRegistedService.isMemberRegistered(memberCheckRegistedDTO.getMemberEmail());
+        boolean isRegistered = MemberAuthServiceImpl.isMemberRegistered(MemberCheckRegistedRequestDTO.getMemberEmail());
 
         if (isRegistered) {
             return new ResponseEntity<>(HttpStatus.OK);
@@ -34,14 +37,14 @@ public class MemberLoginController {
     }
 
     @PostMapping("/google/register")
-    public ResponseEntity<Void> registerGoogleMember(@RequestBody MemberCheckRegistedDTO memberCheckRegistedDTO) {
-        System.out.println("registerMember: " + memberCheckRegistedDTO.getMemberEmail());
+    public ResponseEntity<Void> registerGoogleMember(@RequestBody MemberCheckRegistedRequestDTO MemberCheckRegistedRequestDTO) {
+        System.out.println("registerMember: " + MemberCheckRegistedRequestDTO.getMemberEmail());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping("/kakao/register")
-    public ResponseEntity<Void> registerKakaoMember(@RequestBody MemberCheckRegistedDTO memberCheckRegistedDTO) {
-        System.out.println("registerMember: " + memberCheckRegistedDTO.getMemberEmail());
+    public ResponseEntity<Void> registerKakaoMember(@RequestBody MemberCheckRegistedRequestDTO MemberCheckRegistedRequestDTO) {
+        System.out.println("registerMember: " + MemberCheckRegistedRequestDTO.getMemberEmail());
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

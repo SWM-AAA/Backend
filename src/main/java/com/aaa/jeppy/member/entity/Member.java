@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.Column;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.HashSet;
@@ -33,5 +34,12 @@ public class Member {
 
     public enum SocialProvider {
         KAKAO, GOOGLE
+    }
+
+    @Builder
+    public Member(String email, String membername, SocialProvider provider) {
+        this.email = email;
+        this.membername = membername;
+        this.provider = provider;
     }
 }
